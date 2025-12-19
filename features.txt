@@ -19,7 +19,7 @@ App:
 - Dark mode handling
 - Read from/write to DB
 - Data handling/routing via ViewModel
-- Delete deck (on delete cascade)
+- Delete deck (on delete cascade does not work because on conflict replace works delete -> insert)
 - Show larger image on click
 - Show explanation
 - Custom colors in MaterialTheme
