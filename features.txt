@@ -1,0 +1,141 @@
+App:
+- App icon + SplashScreen
+- Shared TopAppBar
+- Navigation with custom data items
+- DB
+- Connection to server via retrofit2, import data
+- Before import, check if up to date
+- Show question again if answered incorrectly
+- Select questions depending on due date (also check if any questions are due at all. If not ask if study ahead)
+- Display StudySession result in dialog
+- Buttons only enabled if it makes sense (select category, 確認)
+- Custom reusable views (ExpandableView, CardView, NoDataScreen, LoadingSpinner, Charts, ...)
+- Tabs navigation (AnalysisScreen)
+- Snackbar
+- Chart libraries: MPAndroidChart + Vico (customisation)
+- Filtertext, filter on input
+- Sort
+- Image handling (Base64, load from server, decode bitmap)
+- Dark mode handling
+- Read from/write to DB
+- Data handling/routing via ViewModel
+- Delete deck (on delete cascade)
+- Show larger image on click
+- Show explanation
+- Custom colors in MaterialTheme
+- Store/Read data from DataStore (numToStudy, connection details)
+- Handle orientation changes
+- Use string.xml (translatable)
+- Memo
+- Except for data import, everything works offline
+
+
+
+Server:
+- DB with Models
+- CRUD deck
+- CRUD question
+- API endpoints (returns JSON)
+- Import of zip with csv (Header: 分野,問題,画像問題,ア,イ,ウ,エ,画像ア,画像イ,画像ウ,画像エ,正解,解説,出典)
+- deck version increment on change
+- Save old values on page refresh
+- Localization
+- Quick&dirty server, since app is focus
+
+
+
+
+What I wanted to use:
+- DB
+- ViewModel
+- DataStore
+- API call (retrofit2)
+- Async functions (Import, DataStore)
+- Generics (DataStore, CustomNavType)
+- Custom reusable views
+- Navigation
+- Jetpack compose
+- Libraries
+- AndroidView for code written without compose
+- Filter TextField
+- Charts
+- Dark mode
+
+
+TODO:
+Tests? e.g. ExpandableView (showContent when rotated)
+Https?
+
+
+Specialties because of presentation:
+- Study ahead
+- No retired status
+
+
+
+
+Per Screen
+Import:
+Set connection data
+Import via retrofit2
+Snackbar
+call from coroutineScope
+
+Delete:
+Delete deck
+
+
+DeckList:
+Load from DB
+Reload on back (import/delete)
+No data handling
+
+SelectNumDialog:
+DataStore numToStudy (AndroidViewModel)
+
+CategoryList:
+Reusable checkable list
+Study button only enabled if category is selected
+
+
+Analysis:
+Tabs
+Aufbereiten Daten in ViewModel
+Chart libs
+Loading/No data
+
+BarChart:
+Label number/percent
+Color of bar (for whole set, for singular bar), wrong answers red correct answers green
+Rotation x-axis label
+
+
+AnalysisQuestion:
+Filtertext
+Filter dialog (+ previous selection on reopen)
+Sort List (Alphabet, NumWrong, RatioCorrect)
+
+
+Study:
+ExpandableBottomView
+ResultDialog
+Memo
+Show explanation
+RadioButton with image (identify which is selected)
+Reuse same button depending on if currently answered or not yet (styling as well)
+Optional styling (modifyIf)
+
+
+
+Other:
+Navigation
+Custom Color Palette
+Dark mode
+AppBar
+
+
+
+
+Problems:
+Main problem: Connection to server with actual device in school (because Smartphone can't use same network because of school rules)
+Other than that everything was solvable withing 1-2 days by googling
